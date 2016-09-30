@@ -2,6 +2,7 @@
 
 \usepackage{color}
 \usepackage{url}
+\usepackage{cite}
 \newcommand{\todo}[1]{{\textcolor{red}{\textbf{TODO:}~#1}}} 
 
 \begin{document}
@@ -54,14 +55,15 @@ In addition to attracting the community of researchers that usually attend ICSE 
 %Motivation of the workshop's relevance to the field of software engineering.
 Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Software developers use a library or framework's APIs to leverage already implemented functionality. The first step to do so is to understand what available libraries provide the target functionality, what their trade-offs are, and any special setup they may require. Once an API has been identified, the developer using it has to figure out the API's \textit{specification}, which enforces the way the API can be used such as any method call ordering or parameter value restrictions. Unfortunately, this is not the end of the journey for an API's user. If the library's own developers decide to change its APIs, this might break existing software that relied on the previous version of the API. Thus, as the API user's code evolves, she must decide if she wants to use the new API version and determine how the changes will impact her code.
 
-There has been a vast amount of research that tackles each of these problems separately. However, recent work still shows that API usability and evolution are still issues, often with severe consequences such as security vulnerabilities. 
+There has been a vast amount of research that tackles each of the above problems separately (e.g.,~\cite{Subramanian:2014,RobillardInferenceSurvey,RobillardLearn09, NNP+09, ThungLibRec}). However, recent work still shows that API usability and evolution are still issues~\cite{NKMB16, BKHT:FSE16, SunshineAPIProtocol}, often with severe consequences such as security vulnerabilities~\cite{EgeleBFK13}. 
 
 \subsection{Goals and Outcomes}
+\label{sec:goals}
 %Anticipated goals and outcomes of the workshop (e.g., open research problems to pursue, validation objectives, empirical studies).
 To create a more comprehensive solution that allows easier and more correct usages of APIs, we believe that it is time for... For example, some of the open problems that still need to be addressed are:
 
 \begin{itemize}
-\item \textbf{API Quality:} When faced with a choice of multiple APIs that provide the same functionality, what makes one API better than another? Can we automatically measure the quality of an API to help guide users through the decision process?
+\item \textbf{API Quality:} When faced with a choice of multiple APIs that provide the same functionality, what makes one API better than another? What are suitable quality metrics of an API and can we automatically measure them?
 
 \item \textbf{API Usage Recommenders and Misuse Detectors:} To propose ways to use an API or to detect whether some client code correctly uses an API, most techniques rely on mining patterns or specifications from large amounts of client code. The underlying assumption here is that the majority of users ``do it right'' while the anomalous behavior represents the misuse. However, this is not always the case. One important example is security APIs. How can we make use of the vast amount of available client code but still accurately identify correct patterns? What would be the best representation for these patterns? Additionally, what is the best way to present these usage recommendations or misuse-detection results to the developer? 
 
@@ -72,14 +74,22 @@ To create a more comprehensive solution that allows easier and more correct usag
 \item \textbf{API Re-design:} How can we help API designers improve their API based on how developers use it?
 \end{itemize}
 
-The goal of the workshop is to create a synergy between the above research areas with the overall goal of improving the design and use of APIs.
+The aim of the workshop is to create a synergy between the above research areas with the overall goal of improving the design and use of APIs. It also provides a means for young researchers to understand the open challenges in the area and to discuss their ideas for addressing them.
 
 \section{Format and Required Services}
 
 %Workshop format (e.g., paper presentations, keynotes, breakout sessions, panel-like discussions) and plans for generating and stimulating discussions.
 %Desired length of the workshop (i.e. 1 or 2 days).
 %Special services that are needed; logistic and/or equipment constraints.
-We propose a 1-day workshop ...
+We propose a 1-day workshop with the following format:
+
+\begin{itemize}
+\item \textit{Morning keynote speaker.} This will either be an established researcher who provides some background of the area and the open challenges or a practitioner who can highlight the current challenges faced in practice.
+\item \textit{Presentation sessions.} These sessions will be divided into different themes. These themes will be based on the topics of the accepted papers and talks, but are likely going to be related to the topics mentioned in Section~\ref{sec:goals}. Each session will start with a few presentations and will end with an open discussion of the topic. 
+\item \textit{Breakout session.} We will have a breakout session at the end of the workshop where participants will be divided into different groups. The goal of this session is to enable more in-depth discussion of interesting topics that have emerged from the open discussions of the previous sessions. It would also help those interested in the similar topics to foster new collaborations. A representative from each group would then report the outcomes of the discussion to the whole workshop.
+\end{itemize}
+
+To run the workshop, we would need a room equipped with a projector and that can hold around 40 people .
 
 \section{Target Audience}
 
@@ -124,7 +134,7 @@ All three types of submissions will be peer-reviewed by three program committee 
 
 \subsection{Call for Papers}
 %Links to preliminary web site of the workshop and call for papers.
-The preliminary website for the workshop as well as the call for papers can be found here: \url{}.
+The preliminary website for the workshop as well as the call for papers can be found here: \todo{\url{www.}, once we select workshop name}.
 
 \section{Workshop History}
 
@@ -142,6 +152,8 @@ This is the first edition of the workshop.
 \item \textbf{Sven Amann} is currently a fourth-year PhD student at the Technische Universit\"{a}t Darmstadt. His research interests include developer-assistance tools (particularly for API use), bug detection, mining software repositories, and software testing.
 \end{itemize}
 
+\bibliographystyle{myabbrv_withpagesandpublisher}
+\bibliography{refs.bib}
 
 
 % that's all folks
