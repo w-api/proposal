@@ -1,28 +1,34 @@
 \documentclass[10pt, conference]{IEEEtran}
 
 \usepackage{color}
+\usepackage{url}
 \newcommand{\todo}[1]{{\textcolor{red}{\textbf{TODO:}~#1}}} 
 
 \begin{document}
 
-\title{Bare Demo of IEEEtran.cls for IEEECS Conferences}
+\title{APItude: The 1st Workshop on Improving the Design and Use of APIs}
 
 
 % author names and affiliations
 % use a multiple column layout for up to two different
 % affiliations
+\newcommand\tud[0]{\textsuperscript{\normalfont \textdagger}}
+\newcommand\iowa[0]{\textsuperscript{\normalfont \textparagraph}}
+\newcommand\utd[0]{\textsuperscript{\normalfont \ddag}}
+\newcommand\lanu[0]{\textsuperscript{\normalfont \textsection}}
+\newcommand\ualberta[0]{\textsuperscript{\normalfont \textasteriskcentered}}
 
-\author{\IEEEauthorblockN{Authors Name/s per 1st Affiliation (Author)}
-\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
-line 2: name of organization, acronyms acceptable\\
-line 3: City, Country\\
-line 4: Email: name@xyz.com}
+\author{\IEEEauthorblockN{Sarah Nadi}
+\IEEEauthorblockA{University of Alberta\\Canada}
 \and
-\IEEEauthorblockN{Authors Name/s per 2nd Affiliation (Author)}
-\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
-line 2: name of organization, acronyms acceptable\\
-line 3: City, Country\\
-line 4: Email: name@xyz.com}
+\IEEEauthorblockN{Tien N. Nguyen}
+\IEEEauthorblockA{University of Texas at Dallas\\USA}
+\and
+\IEEEauthorblockN{Hoan N. Nguyen}
+\IEEEauthorblockA{Iowa State University\\USA}
+\and
+\IEEEauthorblockN{Sven Amann}
+\IEEEauthorblockA{Technische Universit\"{a}t Darmstadt\\Germany}
 }
 
 
@@ -35,6 +41,14 @@ Application Programming Interfaces (APIs) provide successful means for software 
 In addition to attracting the community of researchers that usually attend ICSE and its co-located events (e.g., MSR and ICPC), we will make intensive efforts to involve local industry participants who can share their experience in using APIs, as well as researchers from South America.
 \end{abstract}
 
+\section{Organizer Contact Information}
+
+\begin{itemize}
+\item \textbf{Sarah Nadi (main contact),} University of Alberta, Email: nadi@ualberta.ca
+\item \textbf{Tien N. Nguyen,} University of Texas at Dallas, Email: tien.n.nguyen@utdallas.edu
+\item \textbf{Hoan N. Nguyen,} Iowa State University, Email: hoan@iastate.edu
+\item \textbf{Sven Amann,} Technische Universit\"{a}t Darmstadt, Email: amann@cs.tu-darmstadt.de
+\end{itemize}
 
 \section{Motivation and Objectives}
 %Motivation of the workshop's relevance to the field of software engineering.
@@ -58,7 +72,7 @@ To create a more comprehensive solution that allows easier and more correct usag
 \item \textbf{API Re-design:} How can we help API designers improve their API based on how developers use it?
 \end{itemize}
 
-
+The goal of the workshop is to create a synergy between the above research areas with the overall goal of improving the design and use of APIs.
 
 \section{Format and Required Services}
 
@@ -87,7 +101,7 @@ The goal of the workshop is to come up with new directions for improving the use
 We will solicit both research papers and position papers. Both types of papers will be four pages long. To encourage local industry participation, we will also call for talk abstracts. Such talks can focus on challenges faced in industry and stir up interesting discussion in the workshop. We will ask the local ICSE organizers to forward the workshop's CFP to local industry contacts.
 
 \subsection{Evaluation Process}
-All three types of submissions will be peer-reviewed by three program committee (PC) members. Here is a list of the proposed PC, where names in bold are committed members.
+All three types of submissions will be peer-reviewed by three program committee (PC) members. Here is a list of the proposed PC, where names in bold are committed members.\todo{update after contacting people}
 
 \begin{enumerate}
 \item Dr. Mira Mezini, TU Darmstadt
@@ -110,13 +124,14 @@ All three types of submissions will be peer-reviewed by three program committee 
 
 \subsection{Call for Papers}
 %Links to preliminary web site of the workshop and call for papers.
+The preliminary website for the workshop as well as the call for papers can be found here: \url{}.
 
 \section{Workshop History}
 
 This is the first edition of the workshop.
 
 \section{Organizers' Bios}
-a brief description of each organizer's background, including relevant past experience in organizing conferences and workshops.
+%a brief description of each organizer's background, including relevant past experience in organizing conferences and workshops.
 \begin{enumerate}
 \item \textbf{Dr. Sarah Nadi} is an assistant professor the University of Alberta. Her research interests include mining software repositories, software product lines, and improving API design and misuse detection.
 
@@ -124,7 +139,7 @@ a brief description of each organizer's background, including relevant past expe
 
 \item \textbf{Dr. Hoan Nguyen} is a post-doctoral research at Iowa State University. His research interests include program analysis, software evolution and maintenance, and mining software repositories. He has extensive expertise in mining API specifications from client code. Hoan has organized several tutorials at \todo{...? any workshops too?}
 
-\item \textbf{Sven Amann} is currently a PhD student at the Technische Universit\"{a}t Darmstadt. His research interests include developer-assistance tools (particularly for API use), bug detection, mining software repositories, and software testing.
+\item \textbf{Sven Amann} is currently a fourth-year PhD student at the Technische Universit\"{a}t Darmstadt. His research interests include developer-assistance tools (particularly for API use), bug detection, mining software repositories, and software testing.
 \end{enumerate}
 
 
