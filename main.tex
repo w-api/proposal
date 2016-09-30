@@ -1,0 +1,135 @@
+\documentclass[10pt, conference]{IEEEtran}
+
+\usepackage{color}
+\newcommand{\todo}[1]{{\textcolor{red}{\textbf{TODO:}~#1}}} 
+
+\begin{document}
+
+\title{Bare Demo of IEEEtran.cls for IEEECS Conferences}
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Authors Name/s per 1st Affiliation (Author)}
+\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
+line 2: name of organization, acronyms acceptable\\
+line 3: City, Country\\
+line 4: Email: name@xyz.com}
+\and
+\IEEEauthorblockN{Authors Name/s per 2nd Affiliation (Author)}
+\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
+line 2: name of organization, acronyms acceptable\\
+line 3: City, Country\\
+line 4: Email: name@xyz.com}
+}
+
+
+\maketitle
+
+
+\begin{abstract}
+Application Programming Interfaces (APIs) provide successful means for software reuse. However, over the past two decades, many researchers have shown inherent problems with APIs, such as providing useful documentation for proper use, detecting wrong usage patterns, and migrating between API versions. While these efforts have advanced the state of the art, most of these problems still exist today. We believe it is time to reflect and compare experiences from different prespectives and come up with new solutions to the above challenges. This workshop will advance the state of research of APIs by combining perspectives of the end users, designers, and maintainers of APIs.
+
+In addition to attracting the community of researchers that usually attend ICSE and its co-located events (e.g., MSR and ICPC), we will make intensive efforts to involve local industry participants who can share their experience in using APIs, as well as researchers from South America.
+\end{abstract}
+
+
+\section{Motivation and Objectives}
+%Motivation of the workshop's relevance to the field of software engineering.
+Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Software developers use a library or framework's APIs to leverage already implemented functionality. The first step to do so is to understand what available libraries provide the target functionality, what their trade-offs are, and any special setup they may require. Once an API has been identified, the developer using it has to figure out the API's \textit{specification}, which enforces the way the API can be used such as any method call ordering or parameter value restrictions. Unfortunately, this is not the end of the journey for an API's user. If the library's own developers decide to change its APIs, this might break existing software that relied on the previous version of the API. Thus, as the API user's code evolves, she must decide if she wants to use the new API version and determine how the changes will impact her code.
+
+There has been a vast amount of research that tackles each of these problems separately. However, recent work still shows that API usability and evolution are still issues, often with severe consequences such as security vulnerabilities. 
+
+\subsection{Goals and Outcomes}
+%Anticipated goals and outcomes of the workshop (e.g., open research problems to pursue, validation objectives, empirical studies).
+To create a more comprehensive solution that allows easier and more correct usages of APIs, we believe that it is time for... For example, some of the open problems that still need to be addressed are:
+
+\begin{itemize}
+\item \textbf{API Quality:} When faced with a choice of multiple APIs that provide the same functionality, what makes one API better than another? Can we automatically measure the quality of an API to help guide users through the decision process?
+
+\item \textbf{API Usage Recommenders and Misuse Detectors:} To propose ways to use an API or to detect whether some client code correctly uses an API, most techniques rely on mining patterns or specifications from large amounts of client code. The underlying assumption here is that the majority of users ``do it right'' while the anomalous behavior represents the misuse. However, this is not always the case. One important example is security APIs. How can we make use of the vast amount of available client code but still accurately identify correct patterns? What would be the best representation for these patterns? Additionally, what is the best way to present these usage recommendations or misuse-detection results to the developer? 
+
+\item\textbf{API Documentation:} How can we provide better documentation for APIs? What kind of documentation would end users find useful?
+
+\item \textbf{API Evolution:} How can we help library designers safely evolve their APIs? How can we help library users adapt their code to API changes?
+
+\item \textbf{API Re-design:} How can we help API designers improve their API based on how developers use it?
+\end{itemize}
+
+
+
+\section{Format and Required Services}
+
+%Workshop format (e.g., paper presentations, keynotes, breakout sessions, panel-like discussions) and plans for generating and stimulating discussions.
+%Desired length of the workshop (i.e. 1 or 2 days).
+%Special services that are needed; logistic and/or equipment constraints.
+We propose a 1-day workshop ...
+
+\section{Target Audience}
+
+Our goal is to have 20-40 participants from both industry and academia. Given the relevant topic of the workshop to the ICSE audience, we expect around 30 participants.
+
+\subsection{Attendee Background} 
+%Required background of the workshop attendees.
+%Whether a Mix of industry and research participants is being sought.
+%Desired minimum and maximum number of workshop participants, expected number of participants.
+We aim for a variety of target audience background, depending on what perspective they look at APIs from. For example, the audience may have backgrounds such as program analysis, usability and HCI, mining software repositories, or software evolution. Alternatively, they can be end-users of APIs that are interested in voicing suggestions or concerns about their current experience in using certain APIs in their projects. That way, participants who specialize in one aspect of working with APIs can learn about other related areas as well.
+
+\subsection{Participant Selection}
+%Participant solicitation and selection process, including whether the workshop will be open or closed.
+The goal of the workshop is to come up with new directions for improving the use of APIs and overcoming the challenges that emerged over the past several years. To that end, the workshop will be open to anyone who would like to attend and contribute to the discussion. While paper proceedings and talks will undergo a selection process, everyone is welcome to register for attending the workshop. 
+
+\section{Proceedings}
+%How many and what type of contributions will be solicited (number of pages and type: extended abstracts, position and/or research papers, etc.).
+
+We will solicit both research papers and position papers. Both types of papers will be four pages long. To encourage local industry participation, we will also call for talk abstracts. Such talks can focus on challenges faced in industry and stir up interesting discussion in the workshop. We will ask the local ICSE organizers to forward the workshop's CFP to local industry contacts.
+
+\subsection{Evaluation Process}
+All three types of submissions will be peer-reviewed by three program committee (PC) members. Here is a list of the proposed PC, where names in bold are committed members.
+
+\begin{enumerate}
+\item Dr. Mira Mezini, TU Darmstadt
+\item Dr. Christoph Treude, University of Adelaide 
+\item Dr. Rob Walker, University of Calgary
+\item Dr. Bradley E. Cossette, McGill University
+\item Dr. Reid Holmes, University of British Columbia
+\item Dr. Danny Dig, Oregon State University
+\item Dr. Miryung Kim, UCLA
+\item Dr. Emerson-murphy Hill, North Carolina State U
+\item Dr. Andy Bagel, Microsoft Research
+\item Dr. Mithun P. Acharya, ABB research
+\item Dr. Peter Rigby, Concordia University
+\item Dr. Margaret Storey, University of Victoria
+\item Dr. Abram Hindle, University of Alberta
+\item Dr. Christian K\"{a}stner, Carnegie Mellon University
+\end{enumerate}
+%Evaluation process that will be used to decide the acceptance of submissions.
+%A list of program committee members, including proposed and committed members.
+
+\subsection{Call for Papers}
+%Links to preliminary web site of the workshop and call for papers.
+
+\section{Workshop History}
+
+This is the first edition of the workshop.
+
+\section{Organizers' Bios}
+a brief description of each organizer's background, including relevant past experience in organizing conferences and workshops.
+\begin{enumerate}
+\item \textbf{Dr. Sarah Nadi} is an assistant professor the University of Alberta. Her research interests include mining software repositories, software product lines, and improving API design and misuse detection.
+
+\item \textbf{Dr. Tien Nguyen} is an associate professor at The University of Texas at Dallas. His research interests include program analysis, large-scale mining software repositories, and statistical approaches in software engineering. He has been involving in organizing workshops and tutorials at ICSE’14, OOPSLA’14, and OOPSLA’15.
+
+\item \textbf{Dr. Hoan Nguyen} is a post-doctoral research at Iowa State University. His research interests include program analysis, software evolution and maintenance, and mining software repositories. He has extensive expertise in mining API specifications from client code. Hoan has organized several tutorials at \todo{...? any workshops too?}
+
+\item \textbf{Sven Amann} is currently a PhD student at the Technische Universit\"{a}t Darmstadt. His research interests include developer-assistance tools (particularly for API use), bug detection, mining software repositories, and software testing.
+\end{enumerate}
+
+
+
+% that's all folks
+\end{document}
+
+
