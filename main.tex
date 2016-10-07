@@ -44,7 +44,6 @@ In addition to attracting the community of researchers that usually attend ICSE 
 \end{abstract}
 
 \section{Organizer Contact Information}
-\todo{please feel free to change the order, depending on how much you want to contribute. I don't think the order matters here that much, but it's the first time for me to organize a workshop so not really sure}
 \begin{itemize}
 \setlength\itemsep{5pt}
 \item \textbf{Sarah Nadi (main contact),} University of Alberta, Email: nadi@ualberta.ca
@@ -55,9 +54,9 @@ In addition to attracting the community of researchers that usually attend ICSE 
 
 \section{Motivation and Objectives}
 %Motivation of the workshop's relevance to the field of software engineering.
-Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Software developers use a library or framework's APIs to leverage already implemented functionality. In order to do so, they first have to understand which available libraries provide the desired functionality, what each library's trade-offs are, and which special setup each may require. Once an adequate library has been identified, developers need to figure out the respective API's \textit{specification}, which defines the way the API can be used. For example, they need to understand which types to use, which methods to call in which order and with which parameter-values, in order to leverage the desired functionality. And this is only the beginning of the journey. If the library's developers decide to change its APIs, this might break existing software that relies on a previous version of the API. Thus, as the API evolves, users must decide whether or not they want to migrate to the new API version and determine how the changes will impact their code.
+Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Software developers use a library or framework's APIs to leverage already implemented functionality. In order to do so, they first have to understand which available libraries provide the desired functionality, what each library's trade-offs are, and which special setup each may require. Once an adequate library has been identified, developers need to figure out the respective API's \textit{specification}, which defines the way the API can be used. For example, they need to understand which types to use, which methods to call in which order and with which parameter-values, in order to leverage the desired functionality. This is only the beginning of the journey. If the library's developers decide to change its APIs, this might break existing software that relies on a previous version of the API. Thus, as the API evolves, users must decide whether or not they want to migrate to the new API version and determine how the changes will impact their code.
 
-There has been a vast amount of research that tackles each of the above problems separately (e.g.,~\cite{Subramanian:2014,RobillardInferenceSurvey,RobillardLearn09, NNP+09, ThungLibRec}). However, recent work shows that API usability and evolution are still issues~\cite{NKMB16, BKHT:FSE16, SunshineAPIProtocol}, often with severe consequences such as security vulnerabilities~\cite{EgeleBFK13}. 
+There has been a vast amount of research that tackles each of the above problems separately (e.g.,~\cite{Subramanian:2014,RobillardInferenceSurvey,RobillardLearn09, NNP+09, ThungLibRec}). However, recent work shows that API usability and evolution are still issues~\cite{NKMB16, BKHT:FSE16, SunshineAPIProtocol}, often with severe consequences such as security vulnerabilities. For example, a recent study showed that 83\% of 269 studied security vulnerabilities are due to the incorrect use of cryptography APIs~\cite{Lazar2014}. Similarly, Egele et al. found that 88\% of almost 12,000 studied Android apps make at least one security violation when using the Java cryptography APIs~\cite{EgeleBFK13}. An even scarier fact is that well-established companies such as Amazon and Paypal also seem to make mistakes when using the APIs for SSL certificate validation~\cite{GeorgievIJABS12}. While misusing security APIs definitely has dire consequences, and some of the difficulties developers have there are specific to the complex nature of these APIs~\cite{NKMB16}, studies showed that developers still struggle with more general-purpose APIs~\cite{SunshineAPIProtocol} and that many of software-crashing bugs are actually due to not understanding the implicit specifications of the underlying APIs~\cite{amani2016mubench}.
 
 \subsection{Goals and Outcomes}
 \label{sec:goals}
@@ -67,18 +66,20 @@ To create a more comprehensive solution that allows easier and more correct usag
 \begin{itemize}
 \setlength\itemsep{5pt}
 
-\item \textbf{API Quality:} When faced with a choice of multiple APIs that provide the same functionality, what makes one API better than another? What are suitable quality metrics of an API and can we automatically measure them?
+\item \textbf{API Design:} How can we help API designers improve their API based on how developers use it? Can we automatically identify frequent similar usages or usage clones as candidates to extend a library's functionality?
 
 \item \textbf{API-Usage Recommenders and Misuse Detectors:} To propose ways to use an API or to detect whether some client code correctly uses an API, most techniques rely on mining patterns or specifications from large amounts of client code. The underlying assumption here is that the majority of users ``do it right'', while the anomalous behavior represents the misuse. However, this is not always the case. One important example is security APIs. How can we make use of the vast amount of available client code but still accurately identify correct patterns? What would be the best representation for these patterns? Additionally, what is the best way to present these usage recommendations or misuse-detection results to the developer? 
 
+\item \textbf{API Quality:} When faced with a choice of multiple APIs that provide the same functionality, what makes one API better than another? What are suitable quality metrics of an API and can we automatically measure them?
+
 \item\textbf{API Documentation:} How can we provide better documentation for APIs? What kind of documentation would end users find useful? How can we ensure up-to-date documentation? And which format best supports developers in grasping an API's specification?
 
-\item \textbf{API Evolution:} How can we help library designers safely evolve their APIs? How can we detect breaking changes in APIs? How can we help library users migrate their code to new API versions?
+\item \textbf{API Maintenance \& Evolution:} How can we help library designers safely evolve their APIs? How can we detect breaking changes in APIs? How can we help the API users migrate their code to new API versions?
 
-\item \textbf{API Design:} How can we help API designers improve their API based on how developers use it? Can we automatically identify frequent similar usages or usage clones as candidates to extend a library's functionality?
 \end{itemize}
 
-The aim of the workshop is to create a synergy between the above research areas with the overall goal of improving the design and use of APIs. It also provides a means for young researchers to understand the open challenges in the area and to discuss their ideas for addressing them.
+The aim of the workshop is to create a synergy between the above research topics with the overall goal of improving the design and use of APIs. Addressing these topics combines multiple research areas such as program analysis, usability and HCI, mining software repositories, information retrieval in software engineering, and software evolution.
+The workshop also provides a means for young researchers to understand the open challenges in the area and to discuss their ideas for addressing them.
 
 \section{Format and Required Services}
 
@@ -108,15 +109,15 @@ We aim for a variety of target-audience background, with respect to the perspect
 
 \subsection{Participant Selection}
 %Participant solicitation and selection process, including whether the workshop will be open or closed.
-The goal of the workshop is to come up with new directions for improving the use of APIs and overcoming the challenges that emerged over the past several years. To that end, the workshop will be open to anyone who would like to attend and contribute to the discussion. While paper proceedings and talks will undergo a selection process, everyone is welcome to register for attending the workshop. 
+The goal of the workshop is to come up with new directions for improving the design, maintenance, and use of APIs and overcoming the challenges that emerged over the past several years. To that end, the workshop will be open to anyone who would like to attend and contribute to the discussion. While paper proceedings and talks will undergo a selection process, everyone is welcome to register for attending the workshop. 
 
 \section{Proceedings}
 %How many and what type of contributions will be solicited (number of pages and type: extended abstracts, position and/or research papers, etc.).
 
-We will solicit research papers, practice papers, position papers, or experience reports. All types of papers will be four pages long. To encourage local industry participation, we will also call for talk abstracts. Such talks can focus on challenges faced in industry and stir up interesting discussion in the workshop. We will ask the local ICSE organizers to forward the workshop's CFP to local industry contacts.
+We will solicit research papers, practice papers, position papers, or experience reports. All types of papers will be four pages long. To encourage local industry participation, we will also call for talk abstracts. Such talks can focus on challenges faced in industry and stir up interesting discussion in the workshop. We will seek help from the local ICSE organizers to get us in touch with local contacts and forward the workshop's CFP to relevant industry participants.
 
 \subsection{Evaluation Process}
-All three types of submissions will be peer-reviewed by three program committee (PC) members. Here is a list of the proposed PC, where names in bold are committed members.\todo{update after contacting people}
+All three types of submissions will be peer-reviewed by three program committee (PC) members. Below is a list of the proposed PC members, where names in bold are members who have already agreed to serve on the PC.
 
 \begin{enumerate}
 \setlength\itemsep{5pt}
@@ -131,7 +132,7 @@ All three types of submissions will be peer-reviewed by three program committee 
 \item Dr. Mithun P. Acharya, ABB research
 \item Dr. Peter Rigby, Concordia University
 \item Dr. Margaret Storey, University of Victoria
-\item Dr. Abram Hindle, University of Alberta
+\item \textbf{Dr. Abram Hindle, University of Alberta}
 \item \textbf{Dr. Christian K\"{a}stner, Carnegie Mellon University}
 \end{enumerate}
 %Evaluation process that will be used to decide the acceptance of submissions.
@@ -139,7 +140,7 @@ All three types of submissions will be peer-reviewed by three program committee 
 
 \subsection{Call for Papers}
 %Links to preliminary web site of the workshop and call for papers.
-The preliminary website for the workshop as well as the call for papers can be found here: \todo{\url{www.}, once we select workshop name}.
+The preliminary website for the workshop as well as the call for papers can be found here: \url{https://w-api.github.io/}.
 
 \section{Workshop History}
 
@@ -170,7 +171,7 @@ This is the first edition of the workshop.
 
 Application Programming Interfaces (APIs) are an essential mechanism for software reuse. However, over the past two decades, many researchers have shown inherent problems with APIs, such as providing useful documentation for proper use, detecting correct usage patterns or wrong usages, and migrating between API versions. While these efforts have advanced the state of the art, most of these problems still exist today. We believe it is time to reflect and compare experiences from different perspectives and to come up with new solutions to the above challenges. 
 
-The first International Workshop on API Usage and Evolution (\shortname{}) provides a venue for researchers and practitioners to come together and discuss the open challenges that API users and designers face. For example, how can we measure the quality of an API? How can we accurately rely on client code for identifying patterns when the rule of ``the majority do it right'' does not always hold? What is the best way to present API recommendations and API usages to a developer? The goal of the workshop is to identify the current open challenges in the area and define a roadmap for innovative solutions.
+The 1st International Workshop on API Usage and Evolution (\shortname{}) provides a venue for researchers and practitioners to come together and discuss the open challenges that API users and designers face. For example, how can we measure the quality of an API? How can we accurately rely on client code for identifying patterns when the rule of ``the majority do it right'' does not always hold? What is the best way to present API recommendations and API usages to a developer? The goal of the workshop is to identify the current open challenges in the area and define a roadmap for innovative solutions.
 
 
 \vspace{0.2cm}
@@ -182,20 +183,23 @@ The first International Workshop on API Usage and Evolution (\shortname{}) provi
 Topics of interest include, but are not limited to:
 \begin{itemize}
 \setlength\itemsep{5pt}
+
 \item API quality metrics
 \item API usage patterns
 \item API misuse detection
 \item API specification/documentation
+\item Support for evolution of API documentation
 \item API design
 \item API evolution and migration
 \item Library/framework recommendations
 \item Leveraging different sources of data to perform any of the above tasks
 \item Suitable representations for usage patterns
+\item User-friendly ways of presenting API and API-usage recommendations to the developer
 \item User perspectives of API usage and evolution
 \item Designer perspectives of API design and evolution
 \item Negative experiences (what did not work)
 \item Identification of open challenges and proposed solutions
-\item Synergies between API challenges and other research areas  
+\item Synergies between API-research challenges and other research areas  
 \end{itemize}
 
 
