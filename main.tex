@@ -4,6 +4,8 @@
 \usepackage{url}
 \usepackage{cite}
 \newcommand{\todo}[1]{{\textcolor{red}{\textbf{TODO:}~#1}}} 
+\newcommand{\sa}[1]{{\textcolor{red}{\textbf{Sven:}~#1}}} 
+\newcommand{\updated}[1]{{\textcolor{blue}{#1}}}
 \newcommand{\shortname}{WAPI}
 
 \begin{document}
@@ -20,7 +22,10 @@
 \newcommand\lanu[0]{\textsuperscript{\normalfont \textsection}}
 \newcommand\ualberta[0]{\textsuperscript{\normalfont \textasteriskcentered}}
 
-\author{\IEEEauthorblockN{Sarah Nadi}
+\author{\IEEEauthorblockN{Sven Amann}
+\IEEEauthorblockA{Technische Universit\"{a}t Darmstadt\\Germany}
+\and
+\IEEEauthorblockN{Sarah Nadi}
 \IEEEauthorblockA{University of Alberta\\Canada}
 \and
 \IEEEauthorblockN{Tien N. Nguyen}
@@ -29,8 +34,8 @@
 \IEEEauthorblockN{Hoan Anh Nguyen}
 \IEEEauthorblockA{Iowa State University\\USA}
 \and
-\IEEEauthorblockN{Sven Amann}
-\IEEEauthorblockA{Technische Universit\"{a}t Darmstadt\\Germany}
+\IEEEauthorblockN{Raffi Khatchadourian}
+\IEEEauthorblockA{City University of New York\\USA}
 }
 
 
@@ -38,23 +43,26 @@
 
 
 \begin{abstract}
+  \sa{do we need to update this?}
 Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Over the past two decades, many researchers have addressed inherent problems with APIs, such as providing more useful documentation for proper use, detecting wrong usage patterns, and migrating between API versions. While research efforts have advanced the state of the art, most of these problems still exist today. We believe it is time to reflect and compare experiences from different perspectives and come up with new solutions to the above challenges. This workshop will advance the state of research of APIs by combining perspectives of the end users, designers, and maintainers of APIs.
 
-In addition to attracting the community of researchers that usually attend ICSE and its co-located events (e.g., MSR and ICPC), we will make intensive efforts to involve local industry participants who can share their experience in using and maintaining APIs, as well as researchers from South America.
+In addition to attracting the community of researchers that usually attend ICSE and its co-located events (e.g., MSR and ICPC), we will make intensive efforts to involve local industry participants who can share their experience in using and maintaining APIs, as well as researchers from \updated{Scandinavia}.
 \end{abstract}
 
 \section{Organizer Contact Information}
 \begin{itemize}
 \setlength\itemsep{5pt}
-\item \textbf{Sarah Nadi (main contact),} University of Alberta, Email: nadi@ualberta.ca
+\item \textbf{Sven Amann (main contact),} Technische Universit\"{a}t Darmstadt, Email: amann@cs.tu-darmstadt.de
+\item \textbf{Sarah Nadi,} University of Alberta, Email: nadi@ualberta.ca
 \item \textbf{Tien N. Nguyen,} University of Texas at Dallas, Email: tien.n.nguyen@utdallas.edu
 \item \textbf{Hoan Anh Nguyen,} Iowa State University, Email: hoan@iastate.edu
-\item \textbf{Sven Amann,} Technische Universit\"{a}t Darmstadt, Email: amann@cs.tu-darmstadt.de
+\item \updated{\textbf{Raffi Khatchadourian,} City University of New York, Email: raffi.khatchadourian@hunter.cuny.edu}
 \end{itemize}
 
 \section{Motivation and Objectives}
+\sa{Do we need to update this?}
 %Motivation of the workshop's relevance to the field of software engineering.
-Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Software developers use a library or framework's APIs to leverage already implemented functionality. In order to do so, they first have to understand which available libraries provide the desired functionality, what each library's trade-offs are, and which special setup each may require. Once an adequate library has been identified, developers need to figure out the respective API's \textit{specification}, which defines the way the API can be used. For example, they need to understand which types to use, which methods to call in which order and with which parameter-values, in order to leverage the desired functionality. This is only the beginning of the journey. If the library's developers decide to change its APIs, this might break existing software that relies on a previous version of the API. Thus, as the API evolves, users must decide whether or not they want to migrate to the new API version and determine how the changes will impact their code.
+Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Software developers use a library or framework's APIs to leverage already implemented functionality. In order to do so, they first have to understand which available libraries provide the desired functionality, what each library's trade-offs are, and which special setup each may require. Once an adequate library has been identified, developers need to figure out the respective API's \textit{specification}, which defines the way the API can be used. For example, they need to understand which types to use and which methods to call in which order and with which parameter-values, in order to leverage the desired functionality. This is only the beginning of the journey. If the library's developers decide to change its APIs, this might break existing software that relies on a previous version of the API. Thus, as the API evolves, users must decide whether or not they want to migrate to the new API version and determine how the changes will impact their code.
 
 There has been a vast amount of research that tackles each of the above problems separately (e.g.,~\cite{Subramanian:2014,RobillardInferenceSurvey,RobillardLearn09, NNP+09, ThungLibRec}). However, recent work shows that API usability and evolution are still issues~\cite{NKMB16, BKHT:FSE16, SunshineAPIProtocol}, often with severe consequences such as security vulnerabilities. For example, a recent study showed that 83\% of 269 studied security vulnerabilities are due to the incorrect use of cryptography APIs~\cite{Lazar2014}. Similarly, Egele et al. found that 88\% of almost 12,000 studied Android apps make at least one security violation when using the Java cryptography APIs~\cite{EgeleBFK13}. An even scarier fact is that well-established companies such as Amazon and Paypal also seem to make mistakes when using the APIs for SSL certificate validation~\cite{GeorgievIJABS12}. Misusing security APIs definitely has dire consequences, and some of the difficulties developers have are specific to the complex nature of these APIs~\cite{NKMB16}. However, other studies showed that developers still struggle with more general-purpose APIs~\cite{SunshineAPIProtocol} and that many of software-crashing bugs are actually due to not understanding the implicit specifications of the underlying APIs~\cite{amani2016mubench}.
 
@@ -68,7 +76,7 @@ To create a more comprehensive solution that allows easier and more correct usag
 
 \item \textbf{API Design:} How can we help API designers improve their API based on how developers use it? Can we automatically identify frequent similar usages or usage clones as candidates to extend a library's functionality?
 
-\item \textbf{API-Usage Recommenders and Misuse Detectors:} To propose ways to use an API or to detect whether some client code correctly uses an API, most techniques rely on mining patterns or specifications from large amounts of client code. The underlying assumption here is that the majority of users ``do it right'', while the anomalous behavior represents the misuse. However, this is not always the case. One important example is security APIs. How can we make use of the vast amount of available client code but still accurately identify correct patterns? What would be the best representation for these patterns? Additionally, what is the best way to present these usage recommendations or misuse-detection results to the developer? 
+\item \textbf{API-Usage Recommenders and Misuse Detectors:} To propose ways to use an API or to detect whether some client code correctly uses an API, most techniques rely on mining patterns or specifications from large amounts of client code. The underlying assumption here is that the majority of users ``do it right,'' while the anomalous behavior represents the misuse. However, this is not always the case. One important example is security APIs. How can we make use of the vast amount of available client code but still accurately identify correct patterns? What would be the best representation for these patterns? Additionally, what is the best way to present these usage recommendations or misuse-detection results to the developer? 
 
 \item \textbf{API Quality:} When faced with a choice of multiple APIs that provide the same functionality, what makes one API better than another? What are suitable quality metrics of an API and can we automatically measure them?
 
@@ -80,6 +88,7 @@ To create a more comprehensive solution that allows easier and more correct usag
 
 The aim of the workshop is to create a synergy between the above research topics with the overall goal of improving the design and use of APIs. Addressing these topics combines multiple research areas such as program analysis, usability and HCI, mining software repositories, information retrieval in software engineering, and software evolution.
 The workshop also provides a means for young researchers to understand the open challenges in the area and to discuss their ideas for addressing them.
+\updated{To further this goal, we will support the participants to create New Ideas Papers from the workshop results.}
 
 \section{Format and Required Services}
 
@@ -91,11 +100,12 @@ We propose a 1-day workshop with the following format:
 \begin{itemize}
 \setlength\itemsep{5pt}
 \item \textbf{Morning keynote speaker.} This will either be an established researcher who provides some background of the area and the open challenges or a practitioner who can highlight the current challenges faced in industry.
-\item \textbf{Presentation sessions.} These sessions will be divided into different themes, based on the topics of the accepted papers and talks, but are likely going to be related to the topics mentioned in Section~\ref{sec:goals}. Each session will start with a few presentations and end with an open discussion of the topic. 
-\item \textbf{Breakout session.} We will have a breakout session at the end of the workshop where participants will be divided into different groups. The goal of this session is to enable more in-depth discussion of interesting topics that emerged in the open discussions of the previous sessions. It will also help those interested in similar topics to foster new collaborations. At the session's end, a representative from each group will report the outcomes of the discussion to the whole workshop.
+\item \textbf{Presentation session.} \updated{The presentations will be kept short and focus on presenting the main open challenges of the respective work, as inspiration for the following breakout sessions.}
+
+\item \textbf{Breakout sessions.} \updated{We will have breakout sessions in the afternoon, where participants will be divided into different groups. The goal of these session is to enable more in-depth discussion of challenges presented in the talks. This will also help those interested in similar topics to foster new collaborations. We will protocol the discussion from each session, as a reference for the participants of different sessions. These protocols will be made public. Together with the workshop participant, we aim to turn these protocols into New Ideas Papers. Possible targets for these publications are ASE'18, ICSE'19, SANER'19, and FSE'19.}
 \end{itemize}
 
-To run the workshop, we would need a room that is equipped with a projector and that can hold around 40 people.
+To run the workshop, we would need a room that is equipped with a projector \updated{and a flip chart/whiteboard,} and that can hold around 40 people.
 
 \section{Target Audience}
 
@@ -113,6 +123,7 @@ The goal of the workshop is to come up with new directions for improving the des
 
 \section{Proceedings}
 %How many and what type of contributions will be solicited (number of pages and type: extended abstracts, position and/or research papers, etc.).
+\sa{Should we narrow this down, to more explicitly target specific open problems that participants can discuss and sketch solutions to? I fear this might nudge the workshop to far into a Doctoral Symposium-like setting.}
 
 We will solicit research papers, practice papers, position papers, or experience reports. All types of papers will be four pages long. To encourage local industry participation, we will also call for talk abstracts. Such talks can focus on challenges faced in industry and stir up interesting discussion in the workshop. We will seek help from the local ICSE organizers to get us in touch with local contacts and forward the workshop's CFP to relevant industry participants.
 
@@ -121,19 +132,7 @@ All three types of submissions will be peer-reviewed by three program committee 
 
 \begin{enumerate}
 \setlength\itemsep{5pt}
-\item Dr. Christoph Treude, University of Adelaide 
-\textbf{\item Dr. Rob Walker, University of Calgary}
-\item Dr. Bradley E. Cossette, McGill University
-\item \textbf{Dr. Reid Holmes, University of British Columbia}
-\item Dr. Danny Dig, Oregon State University
-\item Dr. Miryung Kim, UCLA
-\item Dr. Emerson-murphy Hill, North Carolina State U
-\item Dr. Andy Bagel, Microsoft Research
-\item Dr. Mithun P. Acharya, ABB research
-\item Dr. Peter Rigby, Concordia University
-\item Dr. Margaret Storey, University of Victoria
-\item \textbf{Dr. Abram Hindle, University of Alberta}
-\item \textbf{Dr. Christian K\"{a}stner, Carnegie Mellon University}
+\item \todo{TBA}
 \end{enumerate}
 %Evaluation process that will be used to decide the acceptance of submissions.
 %A list of program committee members, including proposed and committed members.
@@ -144,19 +143,21 @@ The preliminary website for the workshop as well as the call for papers can be f
 
 \section{Workshop History}
 
-This is the first edition of the workshop.
+\updated{The first edition of the workshop was held on May 23, 2017, co-located with ICSE 2017 in Buenos Aires, Argentina. The workshop had five accepted papers out of nine submissions, one invited industry talk, and a keynote and 16 registered attendees. It's website is available at \url{http://w-api.github.io/2016/}~\todo{place old website here}.}
 
 \section{Organizers' Bios}
 %a brief description of each organizer's background, including relevant past experience in organizing conferences and workshops.
 \begin{itemize}
 \setlength\itemsep{5pt}
-\item \textbf{Dr. Sarah Nadi} is an assistant professor the University of Alberta. Her research interests include mining software repositories, software product lines, and helping developers use APIs correctly.
+\item \textbf{Sven Amann} is currently a \updated{fifth}-year PhD student at the Technische Universit\"{a}t Darmstadt. His research interests include developer-assistance tools for API use, bug detection, mining software repositories, and software testing. \updated{He was involved in organizing WAPI'17.}
 
-\item \textbf{Dr. Tien Nguyen} is an associate professor at The University of Texas at Dallas. His research interests include program analysis, large-scale mining software repositories, and statistical approaches in software engineering. He has been involving in organizing workshops and tutorials at ICSE’14, SPLASH’14, and SPLASH’15.
+\item \textbf{Dr. Sarah Nadi} is an assistant professor the University of Alberta. Her research interests include mining software repositories, software product lines, and helping developers use APIs correctly. \updated{She organized WAPI'17.}
 
-\item \textbf{Dr. Hoan Nguyen} is a post-doctoral researcher at Iowa State University. His research interests include program analysis, software evolution and maintenance, and mining software repositories. He has extensive expertise in mining API specifications and adaptations from client code. He has organized tutorials at ICSE'14 and SPLASH'15, and the first Midwest Big Data Summer School 2016.
+\item \textbf{Dr. Tien Nguyen} is an associate professor at The University of Texas at Dallas. His research interests include program analysis, large-scale mining software repositories, and statistical approaches in software engineering. He has been involved in organizing workshops and tutorials at ICSE’14, SPLASH’14, SPLASH’15\updated{, and ICSE'17 (WAPI'17)}.
 
-\item \textbf{Sven Amann} is currently a fourth-year PhD student at the Technische Universit\"{a}t Darmstadt. His research interests include developer-assistance tools for API use, bug detection, mining software repositories, and software testing.
+\item \textbf{Dr. Hoan Nguyen} is a post-doctoral researcher at Iowa State University. His research interests include program analysis, software evolution and maintenance, and mining software repositories. He has extensive expertise in mining API specifications and adaptations from client code. He has organized tutorials at ICSE'14 and SPLASH'15, the first Midwest Big Data Summer School 2016\updated{, and ICSE'17 (WAPI'17)}.
+
+\item \updated{\textbf{Dr. Raffi Khatchadourian} is assistant professor at Hunter College and the Graduate Center at the City University of New York. His research interests are primarily in the software engineering and programming languages fields, particularly in regards to automated software engineering. He was a participant at WAPI'17 and organized \todo{add organization experience}.}
 \end{itemize}
 
 \bibliographystyle{myabbrv_withpagesandpublisher}
@@ -168,6 +169,8 @@ This is the first edition of the workshop.
 \begin{center}
 \Large{\textbf{Call For Papers}}
 \end{center}
+
+\todo{Update call.}
 
 Application Programming Interfaces (APIs) are an essential mechanism for software reuse. However, over the past two decades, many researchers have shown inherent problems with APIs, such as providing useful documentation for proper use, detecting correct usage patterns or wrong usages, and migrating between API versions. While these efforts have advanced the state of the art, most of these problems still exist today. We believe it is time to reflect and compare experiences from different perspectives and to come up with new solutions to the above challenges. 
 
