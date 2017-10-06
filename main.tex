@@ -1,8 +1,24 @@
-\documentclass[10pt, conference]{IEEEtran}
+%\documentclass[10pt, conference]{IEEEtran}
+\documentclass[sigconf]{acmart}
+
+% ACM stuff
+\setcopyright{rightsretained}
+\acmDOI{10.475/123_4}
+
+% ISBN
+\acmISBN{123-4567-24-567/08/06}
+
+%Conference
+\acmConference[ICSE'18]{International Conference on Software Engineering}{May 2018}{Gothenburg, Sweden} 
+\acmYear{2017}
+\copyrightyear{2017}
+\acmArticle{4}
+\acmPrice{15.00}
+% ACM stuff (end)
 
 \usepackage{color}
 \usepackage{url}
-\usepackage{cite}
+%\usepackage{cite}
 \newcommand{\todo}[1]{{\textcolor{red}{\textbf{TODO:}~#1}}} 
 \newcommand{\sa}[1]{{\textcolor{red}{\textbf{Sven:}~#1}}}  
 \newcommand{\sn}[1]{{\textcolor{green}{\textbf{Sarah:}~#1}}}  
@@ -25,13 +41,41 @@
 \newcommand\lanu[0]{\textsuperscript{\normalfont \textsection}}
 \newcommand\ualberta[0]{\textsuperscript{\normalfont \textasteriskcentered}}
 
-\author{\IEEEauthorblockN{Sven Amann\textsuperscript{\textdagger}, Sarah Nadi\textsuperscript{\ddag}, Hoan Anh Nguyen\textsuperscript{\textsection}, Tien N. Nguyen\textsuperscript{*}, Raffi Katchadourian\textsuperscript{$\top$}}
-\IEEEauthorblockA{Technische Universit\"{a}t Darmstadt\textsuperscript{\textdagger}, University of Alberta\textsuperscript{\ddag}, Iowa State University\textsuperscript{\textsection},\\ University of Texas at Dallas\textsuperscript{*}, City University of New York\textsuperscript{$\top$}}
-}
+% authors
+% IEEE authors
+%\author{\IEEEauthorblockN{Sven Amann\textsuperscript{\textdagger}, Sarah Nadi\textsuperscript{\ddag}, Hoan Anh Nguyen\textsuperscript{\textsection}, Tien N. Nguyen\textsuperscript{*}, Raffi Katchadourian\textsuperscript{$\top$}}
+%\IEEEauthorblockA{Technische Universit\"{a}t Darmstadt\textsuperscript{\textdagger}, University of Alberta\textsuperscript{\ddag}, Iowa State University\textsuperscript{\textsection},\\ University of Texas at Dallas\textsuperscript{*}, City University of New York\textsuperscript{$\top$}}
+%}
+% ACM authors
+\author{Sven Amann}
+\affiliation{Technische Universit\"{a}t Darmstadt}
+\author{Sarah Nadi}
+\affiliation{University of Alberta}
+\author{Hoan Anh Nguyen}
+\affiliation{Iowa State University}
+\author{Tien N. Nguyen}
+\affiliation{University of Texas at Dallas}
+\author{Raffi Katchadourian}
+\affiliation{City University of New York}
+% authors (end)
+
+% ACM stuff
+
+%\begin{CCSXML}
+%\end{CCSXML}
+
+%\ccsdesc[500]{Computer systems organization~Embedded systems}
+%\ccsdesc[300]{Computer systems organization~Redundancy}
+%\ccsdesc{Computer systems organization~Robotics}
+%\ccsdesc[100]{Networks~Network reliability}
+
+%\keywords{ACM proceedings, \LaTeX, text tagging}
+
+% ACM stuff (end)
 
 
-\maketitle
-
+% IEEE wants it here
+% \maketitle
 
 \begin{abstract}
 Application Programming Interfaces (APIs) are an essential mechanism for software reuse. Over the past two decades, many researchers have addressed inherent problems with APIs, such as providing more useful documentation for proper use, detecting wrong usage patterns, migrating between API versions, and evolving APIs. While research efforts have advanced the state of the art, most of these problems still exist today. We believe it is time to reflect and compare experiences from different perspectives and come up with new solutions to the above challenges. This workshop will advance the state of research of APIs by combining perspectives of the end users, designers, and maintainers of APIs.
@@ -39,14 +83,18 @@ Application Programming Interfaces (APIs) are an essential mechanism for softwar
 In addition to attracting the community of researchers that usually attend ICSE and its co-located events (e.g., MSR, ICPC), we will make intensive efforts to involve local industry participants who can share their experience in using and maintaining APIs, as well as researchers from Scandinavia.
 \end{abstract}
 
+% ACM wants it here
+\maketitle
+
+
 \section{Organizer Contact Information}
 \begin{itemize}
 \setlength\itemsep{5pt}
 \item \textbf{Sven Amann (main contact),} Technische Universit\"{a}t Darmstadt, Email: amann@cs.tu-darmstadt.de
-\item \textbf{Sarah Nadi,} University of Alberta, Email: nadi@ualberta.ca
-\item \textbf{Tien N. Nguyen,} University of Texas at Dallas, Email: tien.n.nguyen@utdallas.edu
-\item \textbf{Hoan Anh Nguyen,} Iowa State University, Email: hoan@iastate.edu
-\item \textbf{Raffi Khatchadourian,} City University of New York, Email: raffi.khatchadourian@hunter.cuny.edu
+\item \textbf{Sarah Nadi,} University of Alberta,\\Email: nadi@ualberta.ca
+\item \textbf{Tien N. Nguyen,} University of Texas at Dallas,\\Email: tien.n.nguyen@utdallas.edu
+\item \textbf{Hoan Anh Nguyen,} Iowa State University,\\Email: hoan@iastate.edu
+\item \textbf{Raffi Khatchadourian,} City University of New York,\\Email: raffi.khatchadourian@hunter.cuny.edu
 \end{itemize}
 
 \section{Motivation and Objectives}
@@ -163,12 +211,15 @@ The preliminary website for the workshop as well as the call for papers can be f
 
 \item \textbf{Dr. Hoan Nguyen} is a post-doctoral researcher at Iowa State University. His research interests include program analysis, software evolution and maintenance, and mining software repositories. He has extensive expertise in mining API specifications and adaptations from client code. He has been involved in organizing tutorials at ICSE'14 and SPLASH'15, the first Midwest Big Data Summer School 2016, and ICSE'17 (WAPI'17).
 
-\item \textbf{Dr. Tien Nguyen} is an associate professor at The University of Texas at Dallas. His research interests include program analysis, large-scale mining software repositories, and statistical approaches in software engineering. He has been involved in organizing workshops and tutorials at ICSE’14, SPLASH’14, SPLASH’15, and ICSE'17 (WAPI'17).
+\item \textbf{Dr. Tien Nguyen} is an associate professor at The University of Texas at Dallas. His research interests include program analysis, large-scale mining software repositories, and statistical approaches in software engineering. He has been involved in organizing workshops and tutorials at ICSE'14, SPLASH'14, SPLASH'15, and ICSE'17 (WAPI'17).
 
 \item \textbf{Dr.~Raffi Khatchadourian} is an assistant professor at Hunter College and the Graduate Center at the City University of New York. His research interests include program analysis, program transformation, and automated refactoring, including its impact on API consumption. He was a participant at WAPI'17, organized the LaMod'16 workshop at MODULARITY'16. He has also served as the web chair for ECOOP'11 and is currently serving as the publicity chair for ESEC/FSE'18.
 \end{itemize}
 
-\bibliographystyle{myabbrv_withpagesandpublisher}
+% IEEE references
+%\bibliographystyle{myabbrv_withpagesandpublisher}
+% ACM references
+\bibliographystyle{ACM-Reference-Format}
 \bibliography{refs.bib}
 
 \newpage
